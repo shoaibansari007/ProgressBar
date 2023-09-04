@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e4ed;
+        }
+        .frame{
+            position: relative;
+            width: 300px;
+            height: 80px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0,0,0.5);
+        }
+        .image{
+            width: 60px;
+            margin: 10px;
+        }
+        .image img{
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            height: 90%;
+            border-radius: 50%;
+            align-items: center;
+            background-color: #fe8a91;
+            padding: 5px;
+        }
+        .title{
+            position: absolute;
+            top: 10px;
+            left: 80px;
+            font-family: cursive;
+            font-weight: 700;
+            color: #5a5a5a;
+        }
+        .bar-progress{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 70%;
+            position: absolute;
+            top: 30px;
+            left: 80px;
+            font-size: 12px;
+            font-family: cursive;
+            color: #767676;
+        }
+        .loading{
+            position: absolute;
+            top: 55px;
+            left: 80px;
+            width: 70%;
+            height: 6px;
+            background-color: rgb(220, 220, 220);
+            border-radius: 4px;
+        }
+        .loading::after{
+            position: absolute;
+            content: '';
+            background: linear-gradient(90deg, #fecfc8, #fe8181);
+            height: 10px;
+            width: 0%;
+            top: -2px;
+            border-radius: 5px;
+            animation: anim 1s forwards ease-in-out;
+        }
+        @keyframes anim{
+            100%
+            {
+                width: 60%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="image">
+            <img src="Gallery-Logo.png" alt="Gallery-Logo">
+        </div>
+        <p class="title">Images</p>
+        <div class="bar-progress">
+            <p class="size">2,574 GB</p>
+            <p class="files">12,847 Files</p>
+        </div>
+        <div class="loading"></div>
+    </div>
+</body>
+</html>
